@@ -1,46 +1,30 @@
-# Finance ISO 31000 Dashboard
+# Pratt Illustrative ISO 31000 Dashboard
 
-A static GitHub Pages dashboard for executive finance risk reporting.
+This is a public-safe GitHub Pages dashboard package.
 
-## What's included
-
-- Multi-year trend charts for:
-  - Workers' comp spend
-  - Contractor costs
-  - Union labor costs
-  - Workers' comp and labor rate trends
-- Synthetic incident analytics across:
-  - HR
-  - Finance
-  - Risk Management
-  - Safety
-  - Compliance
-  - Procurement
-- Contract review calendar with:
-  - review dates
-  - days remaining
-  - risk flags
-  - items of note
-- Searchable incident register
+## What changed
+- Added **ISO 31000** at the top.
+- Reframed the dashboard around Pratt's mission:
+  - aesthetic judgment
+  - professional knowledge
+  - collaborative skills
+  - technical expertise
+- Added a clear notice that the dashboard is **illustrative** and uses **synthetic data only**.
+- Reduced false precision and used broad categories to avoid implying real cases.
+- Balanced labor and cost content with stewardship, safety, compliance, and community well-being.
 
 ## Publish on GitHub Pages
-
 1. Create a new GitHub repository.
-2. Upload these files to the root of the repo.
-3. In GitHub, open **Settings → Pages**.
-4. Under **Build and deployment**, set:
-   - **Source**: Deploy from a branch
-   - **Branch**: `main` and `/ (root)`
-5. Save. GitHub will publish the site.
+2. Upload these files to the repository root.
+3. In GitHub, go to **Settings > Pages**.
+4. Under **Build and deployment**, choose **Deploy from a branch**.
+5. Select the `main` branch and `/ (root)`.
+6. Save.
 
 ## Files
-
 - `index.html`
 - `style.css`
 - `script.js`
 - `data.json`
 
-## Notes
-
-- The dashboard uses synthetic data for prototype/demo purposes.
-- To switch to real data, replace values in `data.json`.
+All dates, incidents, and contracts are fictional.

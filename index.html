@@ -1,121 +1,107 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Finance Risk Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISO 31000 | Pratt Illustrative Executive Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <p class="eyebrow">ISO 31000 • Finance Department</p>
-      <h1>Executive Dashboard</h1>
-      <p class="subtitle">Workers' comp, contractor and union costs, synthetic incidents, and contract review deadlines.</p>
-    </div>
-    <div class="stamp">
-      <span>Reporting date</span>
-      <strong>March 19, 2026</strong>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">ISO 31000</p>
+      <h1>Illustrative Executive Dashboard</h1>
+      <p class="mission">“...to educate artists and creative professionals to be responsible contributors to society. Pratt seeks to instill in all graduates aesthetic judgment, professional knowledge, collaborative skills, and technical expertise.”</p>
+      <p class="subhead">Public-facing sample dashboard for demonstration purposes only. All metrics, incidents, dates, and contracts shown here are synthetic and do not represent real claims, employees, vendors, unions, or institutional records.</p>
+      <div class="badges">
+        <span>Public-safe prototype</span>
+        <span>Synthetic data</span>
+        <span>Mission-aligned framing</span>
+      </div>
     </div>
   </header>
 
-  <main class="layout">
-    <section class="kpi-grid">
-      <article class="kpi"><span>Workers' Comp Spend</span><strong id="wcSpend"></strong><em id="wcYoY"></em></article>
-      <article class="kpi"><span>Contractor Spend</span><strong id="contractorSpend"></strong><em id="contractorYoY"></em></article>
-      <article class="kpi"><span>Union Labor Spend</span><strong id="unionSpend"></strong><em id="unionYoY"></em></article>
-      <article class="kpi"><span>Total Incidents (YTD)</span><strong id="incidentTotal"></strong><em id="openHigh"></em></article>
-      <article class="kpi"><span>Contract Reviews ≤ 60 Days</span><strong id="reviewsDue"></strong><em>flagged for leadership review</em></article>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="card-header">
-          <h2>Cost Trend Over Time</h2>
-          <p>Millions of dollars</p>
-        </div>
-        <canvas id="costTrend"></canvas>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <h2>Rates Trend</h2>
-          <p>Workers' comp rate per $100 payroll; labor average hourly rates</p>
-        </div>
-        <canvas id="rateTrend"></canvas>
-      </article>
-    </section>
-
-    <section class="grid two">
-      <article class="card">
-        <div class="card-header">
-          <h2>Incidents by Function</h2>
-          <p>Synthetic 2026 monthly incident counts</p>
-        </div>
-        <canvas id="incidentStack"></canvas>
-      </article>
-      <article class="card">
-        <div class="card-header">
-          <h2>Incident Severity Mix</h2>
-          <p>Portfolio view across HR, finance, risk management, safety, compliance, and procurement</p>
-        </div>
-        <canvas id="severityMix"></canvas>
-      </article>
-    </section>
-
-    <section class="card">
-      <div class="card-header">
-        <h2>Contract Review Calendar</h2>
-        <p>Deadlines, owners, and items of note</p>
-      </div>
-      <div class="table-wrap">
-        <table id="contractsTable">
-          <thead>
-            <tr>
-              <th>Contract</th>
-              <th>Owner</th>
-              <th>Review Date</th>
-              <th>Days Remaining</th>
-              <th>Risk</th>
-              <th>Flag</th>
-              <th>Item of Note</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+  <main class="container">
+    <section class="panel">
+      <h2>Why this dashboard exists</h2>
+      <p>
+        This illustrative dashboard shows how an institution could use an ISO 31000-informed lens to monitor claims trends, labor-related cost patterns, contract milestones, and incident themes while staying aligned with its educational mission, community responsibilities, and duty of care.
+      </p>
+      <div class="callout">
+        <strong>Important note:</strong> This site is an example of structure and tone. It is not official reporting, not an audited statement, and not a source of operational or legal truth.
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-header row">
+    <section class="grid kpis" id="kpis"></section>
+
+    <section class="grid two">
+      <div class="panel">
+        <h2>Multi-year cost trends</h2>
+        <canvas id="costChart" height="220"></canvas>
+        <p class="small">Illustrative annual trend lines for workers’ compensation, contractor spend, and union-related costs.</p>
+      </div>
+      <div class="panel">
+        <h2>Rates over time</h2>
+        <canvas id="rateChart" height="220"></canvas>
+        <p class="small">Synthetic rates shown to demonstrate how leadership could track directional movement rather than individual-sensitive detail.</p>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="panel">
+        <h2>Incident themes by function</h2>
+        <canvas id="incidentChart" height="260"></canvas>
+        <p class="small">Categories are broad by design to avoid implying specific people, cases, or departments.</p>
+      </div>
+      <div class="panel">
+        <h2>Review calendar and flagged items</h2>
+        <div id="contracts"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
         <div>
-          <h2>Incident Register</h2>
-          <p>Sample synthetic incident log for dashboard prototyping</p>
+          <h2>Illustrative incident register</h2>
+          <p class="small">Synthetic examples across HR, Finance, Risk Management, Safety, Compliance, and Procurement.</p>
         </div>
-        <input id="incidentSearch" type="search" placeholder="Filter incidents by type, severity, owner, status..." />
+        <input id="searchBox" type="search" placeholder="Search incidents or notes" />
       </div>
       <div class="table-wrap">
-        <table id="incidentsTable">
+        <table id="incidentTable">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Opened</th>
+              <th>Date</th>
+              <th>Function</th>
               <th>Type</th>
               <th>Severity</th>
               <th>Status</th>
-              <th>Owner</th>
-              <th>Target Date</th>
-              <th>Summary</th>
+              <th>Theme</th>
+              <th>Note</th>
             </tr>
           </thead>
           <tbody></tbody>
         </table>
       </div>
     </section>
+
+    <section class="panel methodology">
+      <h2>Methodology and safeguards</h2>
+      <ul>
+        <li>All content is synthetic and illustrative.</li>
+        <li>No real employees, claims, bargaining units, vendors, contracts, or incidents are represented.</li>
+        <li>Labor-related measures are balanced with safety, compliance, stewardship, and community well-being.</li>
+        <li>Broad categories are used to reduce false precision and avoid reputational harm.</li>
+        <li>This example is framed as mission-supporting risk stewardship, not surveillance or blame assignment.</li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>Illustrative ISO 31000 dashboard concept for a mission-driven creative institution.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
