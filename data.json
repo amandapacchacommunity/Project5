@@ -46,7 +46,7 @@
       718,
       736
     ],
-    "union": [
+    "labor": [
       305,
       314,
       323,
@@ -80,7 +80,7 @@
       95,
       97
     ],
-    "unionRate": [
+    "laborRateIndex": [
       3.4,
       3.5,
       3.7,
@@ -109,7 +109,7 @@
   },
   "contracts": [
     {
-      "name": "Facilities Services Agreement",
+      "name": "Creative Facilities Service Agreement",
       "review_date": "2026-04-15",
       "deadline": "2026-05-01",
       "status": "Upcoming",
@@ -117,7 +117,7 @@
       "note": "Illustrative service contract used to show milestone tracking."
     },
     {
-      "name": "Campus Creative Technology Support",
+      "name": "Studio Technology Support Agreement",
       "review_date": "2026-05-10",
       "deadline": "2026-05-31",
       "status": "Monitor",
@@ -125,15 +125,15 @@
       "note": "Synthetic contract example emphasizing stewardship and oversight."
     },
     {
-      "name": "Custodial Labor Understanding",
+      "name": "Campus Services Labor Understanding",
       "review_date": "2026-06-12",
       "deadline": "2026-06-30",
       "status": "Attention",
       "flag": "Coordinate HR, Finance, and Risk review before renewal cycle.",
-      "note": "Broad labor example; not tied to any real bargaining unit."
+      "note": "Broad labor example not tied to any real bargaining unit."
     },
     {
-      "name": "Student Event Support Vendor",
+      "name": "Event Support Vendor Agreement",
       "review_date": "2026-07-08",
       "deadline": "2026-07-22",
       "status": "Upcoming",
@@ -230,7 +230,7 @@
       "Medium",
       "Open",
       "Readiness",
-      "Illustrative note for campuswide completion monitoring."
+      "Illustrative note for institution-wide completion monitoring."
     ],
     [
       "2026-03-26",
@@ -257,7 +257,7 @@
       "Low",
       "Closed",
       "Culture",
-      "Synthetic example supporting collaborative skills and respectful practice."
+      "Synthetic example supporting collaborative and respectful practice."
     ],
     [
       "2026-04-16",

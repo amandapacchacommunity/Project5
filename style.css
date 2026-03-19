@@ -20,18 +20,15 @@ body {
   margin: 0 0 10px 0;
 }
 h1 { margin: 0 0 14px 0; font-size: 2.4rem; }
+h3 { margin-top: 0; }
 .mission {
   font-size: 1.08rem;
   max-width: 980px;
   margin: 0 0 12px 0;
 }
-.subhead {
-  max-width: 980px;
-  margin: 0;
-  opacity: 0.92;
-}
+.subhead { max-width: 980px; margin: 0; opacity: 0.92; }
 .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-.badges span, .flag {
+.badges span {
   background: rgba(255,255,255,0.14);
   border: 1px solid rgba(255,255,255,0.18);
   padding: 8px 12px;
@@ -81,11 +78,41 @@ th { font-size: 0.84rem; text-transform: uppercase; letter-spacing: 0.04em; colo
 .status {
   display: inline-block; padding: 4px 9px; border-radius: 999px; font-size: 0.82rem; background: #f3f4f6;
 }
-.contract-card {
-  border: 1px solid #e5e7eb; border-radius: 14px; padding: 14px; margin-bottom: 12px;
+.contract-card, .forecast-card {
+  border: 1px solid #e5e7eb; border-radius: 14px; padding: 14px;
 }
+.contract-card { margin-bottom: 12px; }
 .contract-top {
   display: flex; justify-content: space-between; gap: 12px; align-items: start;
+}
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #fafbff;
+}
+.control input[type="range"] { width: 100%; }
+.summary-box {
+  font-size: 1.02rem;
+  margin: 0;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+.metric-stack { display: grid; gap: 10px; }
+.metric-row {
+  display: flex; justify-content: space-between; gap: 12px;
+  padding: 10px 12px; border-radius: 12px; background: #f8fafc; border: 1px solid #e5e7eb;
 }
 .footer { padding: 20px; color: #6b7280; font-size: 0.92rem; }
 .methodology ul { margin-bottom: 0; padding-left: 22px; }

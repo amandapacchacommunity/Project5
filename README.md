@@ -1,17 +1,13 @@
-# Pratt Illustrative ISO 31000 Dashboard
+# Mission-Aligned ISO 31000 Dashboard
 
-This is a public-safe GitHub Pages dashboard package.
+This is a public-safe GitHub Pages dashboard package using synthetic data only.
 
-## What changed
-- Added **ISO 31000** at the top.
-- Reframed the dashboard around Pratt's mission:
-  - aesthetic judgment
-  - professional knowledge
-  - collaborative skills
-  - technical expertise
-- Added a clear notice that the dashboard is **illustrative** and uses **synthetic data only**.
-- Reduced false precision and used broad categories to avoid implying real cases.
-- Balanced labor and cost content with stewardship, safety, compliance, and community well-being.
+## Safeguards applied
+- Does not use any real institution name.
+- Does not use real people, vendor, or contract names.
+- Keeps ISO 31000 at the top.
+- Includes scenario toggles for forecasting.
+- Auto-generates a one-sentence summary describing how impacts and likelihoods change.
 
 ## Publish on GitHub Pages
 1. Create a new GitHub repository.
@@ -27,4 +23,4 @@ This is a public-safe GitHub Pages dashboard package.
 - `script.js`
 - `data.json`
 
-All dates, incidents, and contracts are fictional.
+All content is illustrative.

@@ -3,32 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ISO 31000 | Pratt Illustrative Executive Dashboard</title>
+  <title>ISO 31000 | Mission-Aligned Executive Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="hero">
     <div class="hero-inner">
       <p class="eyebrow">ISO 31000</p>
-      <h1>Illustrative Executive Dashboard</h1>
-      <p class="mission">“...to educate artists and creative professionals to be responsible contributors to society. Pratt seeks to instill in all graduates aesthetic judgment, professional knowledge, collaborative skills, and technical expertise.”</p>
-      <p class="subhead">Public-facing sample dashboard for demonstration purposes only. All metrics, incidents, dates, and contracts shown here are synthetic and do not represent real claims, employees, vendors, unions, or institutional records.</p>
+      <h1>Mission-Aligned Executive Dashboard</h1>
+      <p class="mission">“…to educate artists and creative professionals to be responsible contributors to society. The institution seeks to instill in all graduates aesthetic judgment, professional knowledge, collaborative skills, and technical expertise.”</p>
+      <p class="subhead">Illustrative public-facing dashboard for demonstration purposes only. All incidents, dates, contracts, metrics, and forecasts shown here are synthetic and do not represent any real institution, employees, vendors, unions, or records.</p>
       <div class="badges">
-        <span>Public-safe prototype</span>
-        <span>Synthetic data</span>
-        <span>Mission-aligned framing</span>
+        <span>Synthetic data only</span>
+        <span>No real names</span>
+        <span>Forecasting controls included</span>
       </div>
     </div>
   </header>
 
   <main class="container">
     <section class="panel">
-      <h2>Why this dashboard exists</h2>
+      <h2>Purpose</h2>
       <p>
-        This illustrative dashboard shows how an institution could use an ISO 31000-informed lens to monitor claims trends, labor-related cost patterns, contract milestones, and incident themes while staying aligned with its educational mission, community responsibilities, and duty of care.
+        This example shows how a mission-driven creative institution could use an ISO 31000-informed approach to monitor cost trends, contract review timing, incident themes, and forward-looking risk signals while protecting context, privacy, and reputational safety.
       </p>
       <div class="callout">
-        <strong>Important note:</strong> This site is an example of structure and tone. It is not official reporting, not an audited statement, and not a source of operational or legal truth.
+        <strong>Important:</strong> This is a sample structure and narrative, not official reporting, not audited information, and not evidence of actual conditions.
       </div>
     </section>
 
@@ -38,12 +38,12 @@
       <div class="panel">
         <h2>Multi-year cost trends</h2>
         <canvas id="costChart" height="220"></canvas>
-        <p class="small">Illustrative annual trend lines for workers’ compensation, contractor spend, and union-related costs.</p>
+        <p class="small">Illustrative annual trends for workers’ compensation, contractor spend, and labor-related costs.</p>
       </div>
       <div class="panel">
         <h2>Rates over time</h2>
         <canvas id="rateChart" height="220"></canvas>
-        <p class="small">Synthetic rates shown to demonstrate how leadership could track directional movement rather than individual-sensitive detail.</p>
+        <p class="small">Synthetic rates help demonstrate directional monitoring without suggesting real contract terms or real bargaining data.</p>
       </div>
     </section>
 
@@ -51,11 +51,62 @@
       <div class="panel">
         <h2>Incident themes by function</h2>
         <canvas id="incidentChart" height="260"></canvas>
-        <p class="small">Categories are broad by design to avoid implying specific people, cases, or departments.</p>
+        <p class="small">Broad categories are used to avoid implying specific people, teams, or live cases.</p>
       </div>
       <div class="panel">
         <h2>Review calendar and flagged items</h2>
         <div id="contracts"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>Forecast controls</h2>
+          <p class="small">Use the toggles below to explore how costs, impacts, and likelihoods could change under different synthetic assumptions.</p>
+        </div>
+      </div>
+      <div class="forecast-grid">
+        <label class="control">
+          <span>Enrollment pressure</span>
+          <input type="range" id="enrollmentPressure" min="-10" max="20" value="4" step="1" />
+          <strong id="enrollmentPressureVal">+4%</strong>
+        </label>
+        <label class="control">
+          <span>Claims frequency change</span>
+          <input type="range" id="claimsFrequency" min="-15" max="25" value="6" step="1" />
+          <strong id="claimsFrequencyVal">+6%</strong>
+        </label>
+        <label class="control">
+          <span>Contractor rate inflation</span>
+          <input type="range" id="contractorInflation" min="0" max="20" value="5" step="1" />
+          <strong id="contractorInflationVal">+5%</strong>
+        </label>
+        <label class="control">
+          <span>Control improvement</span>
+          <input type="range" id="controlImprovement" min="0" max="20" value="8" step="1" />
+          <strong id="controlImprovementVal">+8%</strong>
+        </label>
+        <label class="control">
+          <span>Compliance readiness</span>
+          <input type="range" id="complianceReadiness" min="-10" max="20" value="3" step="1" />
+          <strong id="complianceReadinessVal">+3%</strong>
+        </label>
+        <label class="control">
+          <span>Capital project activity</span>
+          <input type="range" id="capitalActivity" min="0" max="25" value="7" step="1" />
+          <strong id="capitalActivityVal">+7%</strong>
+        </label>
+      </div>
+      <div class="grid two forecast-out">
+        <div class="forecast-card">
+          <h3>Forecast summary</h3>
+          <p id="forecastSentence" class="summary-box"></p>
+        </div>
+        <div class="forecast-card">
+          <h3>Projected next-year changes</h3>
+          <div id="forecastMetrics" class="metric-stack"></div>
+        </div>
       </div>
     </section>
 
@@ -89,10 +140,10 @@
       <h2>Methodology and safeguards</h2>
       <ul>
         <li>All content is synthetic and illustrative.</li>
-        <li>No real employees, claims, bargaining units, vendors, contracts, or incidents are represented.</li>
-        <li>Labor-related measures are balanced with safety, compliance, stewardship, and community well-being.</li>
-        <li>Broad categories are used to reduce false precision and avoid reputational harm.</li>
-        <li>This example is framed as mission-supporting risk stewardship, not surveillance or blame assignment.</li>
+        <li>No real institution, employees, claims, bargaining units, vendors, contracts, or incidents are represented.</li>
+        <li>Labor-related measures are balanced with stewardship, safety, compliance, and community well-being.</li>
+        <li>Forecasting controls are demonstrative scenario inputs, not predictive models.</li>
+        <li>Summary text is auto-generated from the current synthetic settings for ease of executive interpretation.</li>
       </ul>
     </section>
   </main>

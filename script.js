@@ -89,23 +89,83 @@ function wireSearch(allRows) {
   });
 }
 
+function formatPct(value) {
+  const sign = value > 0 ? '+' : '';
+  return `${sign}${value}%`;
+}
+
+function riskBand(score) {
+  if (score >= 74) return 'high';
+  if (score >= 52) return 'moderate';
+  return 'low';
+}
+
+function updateForecast() {
+  const inputs = {
+    enrollmentPressure: Number(document.getElementById('enrollmentPressure').value),
+    claimsFrequency: Number(document.getElementById('claimsFrequency').value),
+    contractorInflation: Number(document.getElementById('contractorInflation').value),
+    controlImprovement: Number(document.getElementById('controlImprovement').value),
+    complianceReadiness: Number(document.getElementById('complianceReadiness').value),
+    capitalActivity: Number(document.getElementById('capitalActivity').value)
+  };
+
+  Object.keys(inputs).forEach(id => {
+    document.getElementById(id + 'Val').textContent = formatPct(inputs[id]);
+  });
+
+  const workersCompChange = Math.round((inputs.claimsFrequency * 0.9) + (inputs.capitalActivity * 0.25) - (inputs.controlImprovement * 0.6));
+  const contractorCostChange = Math.round((inputs.contractorInflation * 1.1) + (inputs.capitalActivity * 0.5) + (inputs.enrollmentPressure * 0.2));
+  const laborCostChange = Math.round((inputs.enrollmentPressure * 0.6) + (inputs.complianceReadiness * 0.2) + (inputs.capitalActivity * 0.2));
+  const impactScore = Math.max(20, Math.min(95, Math.round(50 + inputs.claimsFrequency * 1.1 + inputs.contractorInflation * 0.9 + inputs.capitalActivity * 0.5 - inputs.controlImprovement * 1.2)));
+  const likelihoodScore = Math.max(15, Math.min(95, Math.round(48 + inputs.enrollmentPressure * 0.8 + inputs.claimsFrequency * 1.0 + inputs.contractorInflation * 0.5 - inputs.controlImprovement * 0.9 - inputs.complianceReadiness * 0.4)));
+
+  const impactBand = riskBand(impactScore);
+  const likelihoodBand = riskBand(likelihoodScore);
+
+  document.getElementById('forecastSentence').textContent =
+    `Under this synthetic scenario, projected workers’ compensation costs move ${workersCompChange >= 0 ? 'up' : 'down'} ${Math.abs(workersCompChange)}%, contractor spending moves ${contractorCostChange >= 0 ? 'up' : 'down'} ${Math.abs(contractorCostChange)}%, and the overall risk profile shifts toward ${impactBand} impact with ${likelihoodBand} likelihood.`;
+
+  const metrics = [
+    ['Workers’ comp cost change', formatPct(workersCompChange)],
+    ['Contractor cost change', formatPct(contractorCostChange)],
+    ['Labor-related cost change', formatPct(laborCostChange)],
+    ['Impact score', `${impactScore} / 100`],
+    ['Likelihood score', `${likelihoodScore} / 100`]
+  ];
+
+  const root = document.getElementById('forecastMetrics');
+  root.innerHTML = '';
+  metrics.forEach(([label, value]) => {
+    const row = document.createElement('div');
+    row.className = 'metric-row';
+    row.innerHTML = `<span>${label}</span><strong>${value}</strong>`;
+    root.appendChild(row);
+  });
+}
+
 loadData().then(data => {
   buildKPIs(data.kpis);
 
   lineChart('costChart', data.costTrends.labels, [
     { label: 'Workers’ comp cost', data: data.costTrends.workersComp },
     { label: 'Contractor cost', data: data.costTrends.contractor },
-    { label: 'Union-related cost', data: data.costTrends.union }
+    { label: 'Labor-related cost', data: data.costTrends.labor }
   ]);
 
   lineChart('rateChart', data.rateTrends.labels, [
     { label: 'Workers’ comp rate', data: data.rateTrends.workersCompRate },
     { label: 'Avg contractor rate', data: data.rateTrends.contractorRate },
-    { label: 'Illustrative labor rate index', data: data.rateTrends.unionRate }
+    { label: 'Labor rate index', data: data.rateTrends.laborRateIndex }
   ]);
 
   barChart('incidentChart', data.incidentSummary.labels, data.incidentSummary.counts);
   buildContracts(data.contracts);
   buildIncidentTable(data.incidents);
   wireSearch(data.incidents);
+
+  ['enrollmentPressure','claimsFrequency','contractorInflation','controlImprovement','complianceReadiness','capitalActivity']
+    .forEach(id => document.getElementById(id).addEventListener('input', updateForecast));
+
+  updateForecast();
 });
