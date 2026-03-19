@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Finance Risk Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">ISO 31000 • Finance Department</p>
+      <h1>Executive Dashboard</h1>
+      <p class="subtitle">Workers' comp, contractor and union costs, synthetic incidents, and contract review deadlines.</p>
+    </div>
+    <div class="stamp">
+      <span>Reporting date</span>
+      <strong>March 19, 2026</strong>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="kpi-grid">
+      <article class="kpi"><span>Workers' Comp Spend</span><strong id="wcSpend"></strong><em id="wcYoY"></em></article>
+      <article class="kpi"><span>Contractor Spend</span><strong id="contractorSpend"></strong><em id="contractorYoY"></em></article>
+      <article class="kpi"><span>Union Labor Spend</span><strong id="unionSpend"></strong><em id="unionYoY"></em></article>
+      <article class="kpi"><span>Total Incidents (YTD)</span><strong id="incidentTotal"></strong><em id="openHigh"></em></article>
+      <article class="kpi"><span>Contract Reviews ≤ 60 Days</span><strong id="reviewsDue"></strong><em>flagged for leadership review</em></article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="card-header">
+          <h2>Cost Trend Over Time</h2>
+          <p>Millions of dollars</p>
+        </div>
+        <canvas id="costTrend"></canvas>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2>Rates Trend</h2>
+          <p>Workers' comp rate per $100 payroll; labor average hourly rates</p>
+        </div>
+        <canvas id="rateTrend"></canvas>
+      </article>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <div class="card-header">
+          <h2>Incidents by Function</h2>
+          <p>Synthetic 2026 monthly incident counts</p>
+        </div>
+        <canvas id="incidentStack"></canvas>
+      </article>
+      <article class="card">
+        <div class="card-header">
+          <h2>Incident Severity Mix</h2>
+          <p>Portfolio view across HR, finance, risk management, safety, compliance, and procurement</p>
+        </div>
+        <canvas id="severityMix"></canvas>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="card-header">
+        <h2>Contract Review Calendar</h2>
+        <p>Deadlines, owners, and items of note</p>
+      </div>
+      <div class="table-wrap">
+        <table id="contractsTable">
+          <thead>
+            <tr>
+              <th>Contract</th>
+              <th>Owner</th>
+              <th>Review Date</th>
+              <th>Days Remaining</th>
+              <th>Risk</th>
+              <th>Flag</th>
+              <th>Item of Note</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header row">
+        <div>
+          <h2>Incident Register</h2>
+          <p>Sample synthetic incident log for dashboard prototyping</p>
+        </div>
+        <input id="incidentSearch" type="search" placeholder="Filter incidents by type, severity, owner, status..." />
+      </div>
+      <div class="table-wrap">
+        <table id="incidentsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Opened</th>
+              <th>Type</th>
+              <th>Severity</th>
+              <th>Status</th>
+              <th>Owner</th>
+              <th>Target Date</th>
+              <th>Summary</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
