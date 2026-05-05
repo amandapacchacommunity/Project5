@@ -1,26 +1,39 @@
-# Mission-Aligned ISO 31000 Dashboard
+# Mission-Aligned Executive Dashboard (2025)
 
-This is a public-safe GitHub Pages dashboard package using synthetic data only.
+## Overview
+This project is an illustrative executive dashboard for a mission-driven organization.
 
-## Safeguards applied
-- Does not use any real institution name.
-- Does not use real people, vendor, or contract names.
-- Keeps ISO 31000 at the top.
-- Includes scenario toggles for forecasting.
-- Auto-generates a one-sentence summary describing how impacts and likelihoods change.
+It demonstrates how incidents, contracts, operational indicators, financial signals, and risk metrics can be organized into a clear leadership-facing view.
 
-## Publish on GitHub Pages
-1. Create a new GitHub repository.
-2. Upload these files to the repository root.
-3. In GitHub, go to **Settings > Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`.
-6. Save.
+## What This Demonstrates
+- Executive-level institutional reporting
+- Mission-aligned performance monitoring
+- Risk and operations visibility
+- Board-ready summary metrics
+- Strategic decision support
 
-## Files
-- `index.html`
-- `style.css`
-- `script.js`
-- `data.json`
+## Key Features
+- Synthetic executive dashboard
+- Operational and financial indicators
+- Risk and incident summaries
+- Leadership-ready presentation
+- Mission-centered reporting structure
 
-All content is illustrative.
+## Example Use Cases
+This type of model could support:
+- Executive leadership review
+- Board reporting
+- Institutional planning
+- Risk and operations monitoring
+- Mission-driven performance assessment
+
+## Data Note
+All incidents, dates, contracts, metrics, and forecasts are synthetic and do not represent any real institution, employees, vendors, unions, or records.
+
+## About This Work
+This project is part of a broader portfolio focused on institutional clarity, governance, analytics, and long-term decision support.
+
+## Author
+Amanda Paccha  
+Institutional Strategy, Governance & Decision Support  
+GitHub: https://github.com/amandapacchacommunity
